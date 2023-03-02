@@ -2,7 +2,8 @@
 
 /**
  * binary_tree_balance - measures the balance facroe of the tree
- * @tree: pointer to the root node
+ * @tree: pointer to the root nod
+ * Return: balancee
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
