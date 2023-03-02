@@ -1,14 +1,18 @@
 #include "binary_trees.h"
 
+/**
+ * binary_tree_nodes - Counts the nodes with a tleast 1 child in yhe tree
+ * @tree: pointer to the root node of the tree
+ * Return: The number of nodes
+ */
 size_t binary_tree_nodes(const binary_tree_t *tree)
 {
-	size_t num, left, right;
-
+	size_t count = 0;
 	if (tree)
 	{
-		left = 1 + binary_tree_nodes(tree->left);
-		right = 1 + binary_tree_nodes(tree->right);
+		count += (tree->left || tree->right) ? 1 : 0;
+		count += binary_tree_nodes(tree->left);
+		count += binary_tree_nodes(tree->right);
 	}
-	num = left > right ? left : right;
-	return (num);
+	return (count);
 }
